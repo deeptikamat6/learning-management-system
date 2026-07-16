@@ -36,7 +36,9 @@ function MyCourses() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          {courses.map((item) => (
+          {courses
+              .filter((item) => item.course)
+              .map((item) => (
 
             <div
               key={item._id}
@@ -44,17 +46,17 @@ function MyCourses() {
             >
 
               <h2 className="text-xl font-bold">
-                {item.course.title}
+                {item.course?.title}
               </h2>
 
               <p className="mt-2 text-gray-600">
-                {item.course.description}
+                {item.course?.description}
               </p>
 
               <p className="mt-3">
                 Instructor:
                 {" "}
-                {item.course.instructor.name}
+                {item.course?.instructor?.name}
               </p>
 
               <p>

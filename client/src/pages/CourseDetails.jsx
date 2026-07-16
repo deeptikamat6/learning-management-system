@@ -20,7 +20,7 @@ function CourseDetails() {
   useEffect(() => {
     fetchCourse();
     fetchLessons();
-    fetchProgress();
+    //fetchProgress();
   }, []);
 
   const fetchCourse = async () => {
@@ -41,19 +41,19 @@ function CourseDetails() {
     }
   };
 
-//   const fetchProgress = async () => {
-//   try {
+  const fetchProgress = async () => {
+  try {
 
-//     const data = await getCourseProgress(id);
+    const data = await getCourseProgress(id);
 
-//     setProgress(data);
+    setProgress(data);
 
-//   } catch (error) {
+  } catch (error) {
 
-//     console.error(error);
+    console.error(error);
 
-//   }
-// };
+  }
+};
 
   if (!course) {
     return <h1 className="text-center mt-10">Loading...</h1>;
@@ -120,11 +120,11 @@ function CourseDetails() {
           Enroll Now
         </button>
 
-        {/* {progress && (
+         {progress && (
   <ProgressBar
     percentage={progress.progressPercentage}
   />
-)} */}
+)} 
 
       </div>
     </>
